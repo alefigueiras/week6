@@ -19,11 +19,18 @@ def getinputscore():
 
 @app.route('/showind')
 def showind():
-    countries = request.args['country']
     
-    indicator = request.args['indicator'].upper()
+    c1 = request.args['country1']
+    
+    c2 = request.args['country2']
+    
+    countries = [c1, c2]
+        
+    i1 = request.args['indicator'].upper()
 
-    performance = create_dataframe(countries,indicator)
+    indicators = [i1]
+    
+    performance = create_dataframe(countries,indicators)
     
     chart = create_plot(performance)
     
