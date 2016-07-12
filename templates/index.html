@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<title>AFR Capstone Project</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
+.w3-navbar,h1,button {font-family: "Montserrat", sans-serif}
+.fa-briefcase,.fa-database, .fa-user {font-size:200px}
+</style>
+<body>
+
+    
+<!-- Navbar -->
+<ul class="w3-navbar w3-dark-grey w3-card-2 w3-top w3-center w3-large">
+  <li class="w3-hide-medium w3-hide-large w3-opennav">
+    <a class="w3-padding-large w3-hover-white w3-large" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+  </li>
+  <li><a href="#home" class="w3-padding-large w3-white">Home</a></li>
+  <li class="w3-hide-small"><a href="#invandrisks" class="w3-padding-large w3-hover-white">Investments and Risks</a></li>
+  <li class="w3-hide-small"><a href="#thedata" class="w3-padding-large w3-hover-white">The Data</a></li>
+  <li class="w3-hide-small"><a href="#me" class="w3-padding-large w3-hover-white">About Me</a></li>
+  <li class="w3-hide-small"><a href="#estimator" class="w3-padding-large w3-hover-white">Estimate the Risk</a></li>
+</ul>
+
+
+
+<!-- Header -->
+    
+<div id="home" class="w3-display-container">
+  <img src="/static/header.jpg" alt="Road"
+  style="width:100%;min-height:600px;max-height:800px;">
+      <div class="w3-display-middle w3-text-sand w3-jumbo w3-center"><br><br><br>
+      RISK ESTIMATOR<br>
+      A tool to assess risks in international investments 
+        <div class="w3-display-container">
+            <form id='input' method='get' action='getinputind'>
+               <input class="w3-btn w3-padding-16 w3-xlarge w3-margin-top" type="submit" value="Get Started">
+            </form>          
+          </div>
+      </div>
+</div>
+    
+  
+
+<!-- First Grid -->
+<div id="invandrisks" class="w3-row-padding w3-padding-128 w3-container w3-sand">
+  <div class="w3-content">
+    <div class="w3-twothird">
+      <h1 class="w3-padding-16">Investments and risks</h1>
+      <h4 class="w3-padding-16">Companies use to take wrong investment decisions just based on the revenues they could obtain in a specific market and industry. Then the problems come up when they suffer great losses because of currency depreciations, expropriations, high levels of corruption and some other issues that could have been assessed previously. Many lawsuits, arbitrations, and other expensive proceedings initiated to compensate companies for those losses might be avoided. 
+With the data and the analysis tools currently available, it is possible to give a pretty accurate estimation of how risky a specific market is.<br><br>
+       This tool could be used either by companies or by law firms when advising their clients on potential investments.</h4>
+    </div>
+
+    <div class="w3-third w3-center">
+      <i class="fa fa-briefcase w3-padding-64 w3-text-grey"></i>
+    </div>
+  </div>
+</div>
+
+<!-- Second Grid -->
+<div id="thedata" class="w3-row-padding w3-cyan w3-padding-128 w3-container">
+  <div class="w3-content">
+    <div class="w3-third w3-center">
+      <i class="fa fa-database w3-padding-64 w3-text-dark-grey w3-margin-right"></i>
+    </div>
+
+    <div class="w3-twothird">
+      <h1 class="w3-padding-16">The data</h1>
+      <h4 class="w3-padding-16">The data for this project is obtained from the World Bank data catalog. <br><br>
+        The World Bank offers timely and reliable statistics. It maintains a number of macro, financial and sector databases and offers free and open access to global development data.</h4>
+    </div>
+  </div>
+</div>
+
+    <!-- Third Grid -->
+<div id="me" class="w3-row-padding w3-padding-128 w3-container w3-black w3-opacity">
+  <div class="w3-content">
+    <div class="w3-twothird w3-text-sand">
+      <h1  class="w3-padding-16">About me</h1>
+      <h4 class="w3-padding-16 w3-text-sand">I integrate legal experience, data science, business, leadership and management skills:<br><br>
+✔ Lawyer, Master and Ph.D. in Law with wide experience advising international clients in highly-regulated industries on regulatory affairs and corporate law.<br>
+✔ Data science knowledge with special emphasis on business analytics. Communication skills to translate technical findings to non-technical teams.<br>
+✔ Entrepreneur; understand clients' global businesses and contribute to their growth.<br>
+✔ 11 years of management experience and executive leadership in multidisciplinary teams.<br>
+✔ First-hand experience with complex risks and uncertain environments.
+       </h4>
+    </div>
+
+    <div class="w3-third w3-center">
+      <i class="fa fa-user w3-padding-64 w3-text-sand"></i>
+    </div>
+  </div>
+</div>
+
+    
+       <!-- Fourth Grid -->
+<div id="estimator" class="w3-row-padding w3-padding-128 w3-container w3-sand">
+   
+    <div class="w3-content">
+    <div class="w3-half w3-text-dark-grey">
+      <h4 class="w3-padding-16 w3-text-dark-grey">BlaBlaBla.
+       </h4>
+    </div>
+<div class="w3-display-container">
+            <form id='input' method='get' action='getinputind'>
+               <input class="w3-btn w3-padding-16 w3-xlarge w3-margin-top" type="submit" value="Get Indicators">
+            </form>          
+          </div>
+        
+        <div class="w3-display-container">
+            <form id='input' method='get' action='getinputscore'>
+               <input class="w3-btn w3-padding-16 w3-xlarge w3-margin-top" type="submit" value="Get Score">
+            </form>          
+          </div>
+  </div>
+</div>
+    
+<!-- Footer -->
+<footer class="w3-container w3-padding-16 w3-center w3-opacity">
+ <p>Powered by <a href="http://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
+</footer>
+
+<script>
+// Used to toggle the menu on small screens when clicking on the menu button
+function myFunction() {
+    var x = document.getElementById("navDemo");
+    if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+    } else {
+        x.className = x.className.replace(" w3-show", "");
+    }
+}
+</script>
+
+</body>
+</html>
