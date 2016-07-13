@@ -32,7 +32,7 @@ def create_dataframes(countries, indicators):
     return pandas.concat(dataframes)
 
 def get_mean(dataframes):
-    score = df.groupby('Country')['Value'].mean().reset_index()
+    score = dataframes.groupby('Country')['Value'].mean().reset_index()
     return score
 
 def plot_score(score):

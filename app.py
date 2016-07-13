@@ -14,7 +14,6 @@ def main():
 def index():
     return render_template('index.html')
 
-
 @app.route('/getinputind')
 def getinputind():
     return render_template('inputind.html')
@@ -26,10 +25,18 @@ def getinputscore():
 @app.route('/showind')
 def showind():
         
-    c = {}
+    c0 = request.args['country0']
     
-    countries = [value for key, value in c.items() if key.startswith('country') and value]
+    c1 = request.args['country1']
     
+    c2 = request.args['country2']
+    
+    c3 = request.args['country3']
+    
+    c4 = request.args['country4']
+
+    countries = [c0, c1, c2, c3, c4]
+            
     i0 = request.args['indicator']
 
     indicator = [i0]
@@ -46,22 +53,30 @@ def showind():
                            script=script,
                            div=div)
 
-@app.route('/showscore')
-def showscore():
+@app.route('/showgovscore')
+def showgovscore():
     
-    c = {}
+    c0 = request.args['country0']
     
-    countries = [value for key, value in c.items() if key.startswith('country') and value]
+    c1 = request.args['country1']
     
-    i0 = request.args['i0']
+    c2 = request.args['country2']
     
-    i1 = request.args['i1']
+    c3 = request.args['country3']
     
-    i2 = request.args['i2']
+    c4 = request.args['country4']
+
+    countries = [c0, c1, c2, c3, c4]
     
-    i3 = request.args['i3']
+    i0 = ['CC.EST']
     
-    i4 = request.args['i4']
+    i1 = ['GE.EST']
+    
+    i2 = ['RQ.EST']
+    
+    i3 = ['VA.EST']
+    
+    i4 = ['RL.EST']
 
     indicators = [i0, i1, i2, i3, i4]
     
@@ -78,6 +93,83 @@ def showscore():
                            css_resources=INLINE.render_css(),
                            script=script,
                            div=div)
+
+@app.route('/showlegscore')
+def showlegscore():
+    
+    c0 = request.args['country0']
+    
+    c1 = request.args['country1']
+    
+    c2 = request.args['country2']
+    
+    c3 = request.args['country3']
+    
+    c4 = request.args['country4']
+
+    countries = [c0, c1, c2, c3, c4]
+    
+    i0 = ['CC.EST']
+    
+    i1 = ['GE.EST']
+    
+    i2 = ['RQ.EST']
+    
+    i3 = ['VA.EST']
+    
+    i4 = ['RL.EST']
+
+    indicators = [i0, i1, i2, i3, i4]
+    
+    dataframes = create_dataframes(countries,indicators)
+    
+    score = get_mean(dataframes)
+    
+    chartsco = plot_score(score)
+    
+    script,div = components(chartsco)
+    
+    return render_template('showscore.html',
+                           js_resources=INLINE.render_js(),
+                           css_resources=INLINE.render_css(),
+                           script=script,
+                           div=div)
+
+
+
+@app.route('/showbusscore')
+def showbusscore():
+    
+    c0 = request.args['country0']
+    
+    c1 = request.args['country1']
+    
+    c2 = request.args['country2']
+    
+    c3 = request.args['country3']
+    
+    c4 = request.args['country4']
+
+    countries = [c0, c1, c2, c3, c4]
+    
+    i0 = "IC.BUS.EASE.XQ"
+    
+    indicators = [i0]
+    
+    dataframes = create_dataframes(countries,indicators)
+    
+    score = get_mean(dataframes)
+    
+    chartsco = plot_score(score)
+    
+    script,div = components(chartsco)
+    
+    return render_template('showscore.html',
+                           js_resources=INLINE.render_js(),
+                           css_resources=INLINE.render_css(),
+                           script=script,
+                           div=div)
+
 
 if __name__ == '__main__':
     app.debug = True
