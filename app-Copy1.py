@@ -5,15 +5,9 @@ from bokeh.embed import components
 
 app = Flask(__name__)
 
-
 @app.route('/')
-def main():
-    return redirect('/index')
-
-@app.route('/index')
 def index():
     return render_template('index.html')
-
 
 @app.route('/getinputind')
 def getinputind():
@@ -25,14 +19,27 @@ def getinputscore():
 
 @app.route('/showind')
 def showind():
+    
+    c1 = request.args['country1']
+    
+    c2 = request.args['country2']
+    
+    countries = [c1, c2]
         
+    i1 = request.args['indicator'].upper()
+
+    indicator = [i1]
+    
+    
+    
+    
     c = {}
     
     countries = [value for key, value in c.items() if key.startswith('country') and value]
     
-    i0 = request.args['indicator']
+    i1 = request.args['indicator']
 
-    indicator = [i0]
+    indicator = [i1]
     
     performance = get_indicator(countries,indicator)
     
@@ -53,25 +60,28 @@ def showscore():
     
     countries = [value for key, value in c.items() if key.startswith('country') and value]
     
-    i0 = request.args['i0']
+    i = {}
     
-    i1 = request.args['i1']
-    
-    i2 = request.args['i2']
-    
-    i3 = request.args['i3']
-    
-    i4 = request.args['i4']
+    countries = [value for key, value in i.items() if key.startswith('i') and value]
 
-    indicators = [i0, i1, i2, i3, i4]
     
-    dataframes = create_dataframes(countries,indicators)
     
-    score = get_mean(dataframes)
     
-    chartsco = plot_score(score)
     
-    script,div = components(chartsco)
+    
+    
+    
+    
+    
+    countries = request.args['country']
+    
+    indicator = request.args['indicator'].upper()
+
+    performance = create_dataframe(countries,indicator)
+    
+    chart = create_plot(performance)
+    
+    script,div = components(chart)
     
     return render_template('showscore.html',
                            js_resources=INLINE.render_js(),
