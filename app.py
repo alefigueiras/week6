@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request, redirect
-from first_module_risk import create_dataframe, create_plot
+from first_module_risk import get_indicator, plot_ind, create_dataframes, get_mean, plot_score
 from bokeh.resources import INLINE
 from bokeh.embed import components
 
