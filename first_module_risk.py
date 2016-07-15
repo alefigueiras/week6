@@ -2,6 +2,7 @@ import pandas
 import requests
 import datetime
 from bokeh.charts import Bar, output_file, show, TimeSeries, Scatter
+from bokeh.palettes import BrBG5, YlGnBu5
 
 def get_indicator(countries, indicator):
     url = 'http://api.worldbank.org/countries/%s/indicators/%s?per_page=300&date=2014:2014&format=json' % (';'.join(countries), ';'.join(indicator))
@@ -24,7 +25,7 @@ def get_indicator(countries, indicator):
 
 def plot_ind(performance):
     p = Bar(performance, label='Country', values='Value', color='Country', xlabel="Country", 
-            ylabel=performance['Indicator'][0], title='Performance of %s' % performance['Indicator'][0], legend='top_right')
+            ylabel=performance['Indicator'][0], title='Performance of %s' % performance['Indicator'][0], legend='top_right', width=1400, height=700, palette=YlGnBu5)
     return p
 
 def create_dataframes(countries, indicators):
@@ -37,5 +38,5 @@ def get_mean(dataframes):
 
 def plot_score(score):
     p = Bar(score, label='Country', values='Value', xlabel="Country", 
-    color='Country', title='Title', legend='top_right')
+    color='Country', title='Title', legend='top_right', width=1400, height=700, palette=YlGnBu5)
     return p

@@ -20,7 +20,7 @@
   </li>
   <li><a href="index#home" class="w3-padding-large w3-white">Home</a></li>
   <li class="w3-hide-small"><a href="index#estimator" class="w3-padding-large w3-hover-white">Estimate the Risk</a></li>
-</ul>
+        </ul>
 
 
 
@@ -33,13 +33,15 @@
 
     
     
-<div class="w3-container w3-sand w3-center w3-padding-64">
-<h2>SELECT UP TO 5 COUNTRIES</h2>
+<div class="w3-container w3-sand w3-center w3-padding-128">
+
+    <h2>SELECT 5 COUNTRIES</h2>
 
 <form id='input' method='get' action='showind'>
  
 
 <select name="country0">
+  <option value="">Select A Country</option>  
   <option value="BRA">Brazil</option>
   <option value="IND">India</option>
   <option value="ESP">Spain</option>
@@ -48,6 +50,7 @@
 </select>
     
 <select name="country1">
+  <option value="">Select A Country</option>  
   <option value="BRA">Brazil</option>
   <option value="IND">India</option>
   <option value="ESP">Spain</option>
@@ -56,6 +59,7 @@
 </select>
     
 <select name="country2">
+  <option value="">Select A Country</option>  
   <option value="BRA">Brazil</option>
   <option value="IND">India</option>
   <option value="ESP">Spain</option>
@@ -63,7 +67,8 @@
   <option value="VEN">Venezuela</option>
 </select>
     
-    <select name="country3">
+<select name="country3">
+  <option value="">Select A Country</option>  
   <option value="BRA">Brazil</option>
   <option value="IND">India</option>
   <option value="ESP">Spain</option>
@@ -71,23 +76,32 @@
   <option value="VEN">Venezuela</option>
 </select>
     
-    <select name="country4">
+<select name="country4">
+  <option value="">Select A Country</option>  
   <option value="BRA">Brazil</option>
   <option value="IND">India</option>
   <option value="ESP">Spain</option>
   <option value="USA">United States of America</option>
   <option value="VEN">Venezuela</option>
 </select>
-    
+ 
+    <br><br><br>
     
     <h2>SELECT 1 INDICATOR</h2>
 
-    <p>
-  Indicator:<br>
-  <input type="text" name="indicator"><br>
-    </p>
 
- 
+    
+<select name="indicator">
+  <option value="">Select 1 Indicator</option>  
+  <option value="CC.EST">Control of Corruption</option>
+  <option value="GE.EST">Government Effectiveness</option>
+  <option value="RQ.EST">Regulatory Qualiy</option>
+  <option value="VA.EST">Voice and Accountability</option>
+  <option value="RL.EST">Rule of Law</option>
+</select>
+  
+        <br><br>
+    
                <input class="w3-btn w3-padding-16 w3-xlarge w3-margin-top" type="submit" value="Submit">
 </form> 
  
